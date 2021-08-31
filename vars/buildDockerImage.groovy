@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-call(){
+def call(){
     sh "docker build -t rayudusubrahmanyam/myapp:$BUILD_NUMBER.0 ."
     withCredentials([usernamePassword(credentialsId: 'DockerHub', passwordVariable:'PASS', usernameVariable: 'USER')])
             {
